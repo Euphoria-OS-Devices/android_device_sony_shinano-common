@@ -40,6 +40,7 @@ PRODUCT_COPY_FILES += \
 # Init
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/fstab.qcom:root/fstab.qcom \
+    $(COMMON_PATH)/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab \
     $(COMMON_PATH)/rootdir/init.qcom.rc:root/init.qcom.rc \
     $(COMMON_PATH)/rootdir/init.qcom.power.rc:root/init.qcom.power.rc \
     $(COMMON_PATH)/rootdir/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
@@ -70,6 +71,13 @@ PRODUCT_PACKAGES += \
 # Bluetooth
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
+    
+#CAMERA
+PRODUCT_PACKAGES += \
+    libmmcamera_interface \
+    libmmjpeg_interface \
+    libqomx_core \
+    camera.msm8974
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
